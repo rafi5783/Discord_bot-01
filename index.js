@@ -1,6 +1,9 @@
+require('dotenv').config();
 const {Client,GatewayIntentBits } = require('discord.js');
 
 const client = new Client({ intents: [GatewayIntentBits.Guilds , GatewayIntentBits.GuildMessages , GatewayIntentBits.MessageContent]});
+
+
 
 client.on("messageCreate", (message) => {
     if (message.author.bot) return;
@@ -20,4 +23,4 @@ client.on("interactionCreate",(interaction) => {
     interaction.reply("Pong!!!");
 });
 
-client.login("MTI2ODAxMTY5MDQxNTM1ODA3NA.Gsssji.VpyqWbazAIv6ADJyFSIKJKdOZa0SEpbGCMrr-Q");
+client.login(process.env.SECERT);

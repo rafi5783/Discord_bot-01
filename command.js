@@ -1,4 +1,7 @@
+require('dotenv').config();
+
 const { REST, Routes } = require('discord.js');
+
 const commands = [
     {
       name: 'ping',
@@ -6,7 +9,7 @@ const commands = [
     },
   ];
 
-  const rest = new REST({ version: '10' }).setToken('MTI2ODAxMTY5MDQxNTM1ODA3NA.Gsssji.VpyqWbazAIv6ADJyFSIKJKdOZa0SEpbGCMrr-Q');
+  const rest = new REST({ version: '10' }).setToken(process.env.SECERT);
 
   (async () => {
   try {
